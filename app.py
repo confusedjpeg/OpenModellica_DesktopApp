@@ -3,7 +3,8 @@ import os
 import subprocess
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
-    QLabel, QLineEdit, QPushButton, QFileDialog, QMessageBox
+    QLabel, QLineEdit, QPushButton, QFileDialog, QMessageBox,
+    QTextEdit, QFormLayout
 )
 
 class OpenModelicaApp(QWidget):
@@ -35,26 +36,28 @@ class OpenModelicaApp(QWidget):
         self.start_time_label = QLabel("Start Time:")
         self.start_time_input = QLineEdit()
         self.start_time_input.setPlaceholderText("Enter start time (integer)")
-        start_time_layout.addWidget(self.start_time_label)
-        start_time_layout.addWidget(self.start_time_input)
+        time_layout.addRow(self.start_time_label, self.start_time_input)
 
         # Stop Time
         stop_time_layout = QHBoxLayout()
         self.stop_time_label = QLabel("Stop Time:")
         self.stop_time_input = QLineEdit()
         self.stop_time_input.setPlaceholderText("Enter stop time (integer)")
-        stop_time_layout.addWidget(self.stop_time_label)
-        stop_time_layout.addWidget(self.stop_time_input)
+        time_layout.addRow(self.stop_time_label, self.stop_time_input)
 
         # Execute Button
         self.execute_button = QPushButton("Run Simulation")
         self.execute_button.clicked.connect(self.run_simulation)
 
+        self.output_text = QTextEdit()
+        self.output_text.setReadOnly(True)  # Make it read-only
+        layout.addWidget(self.output_text)
+
         # Adding all widgets to the main layout
         layout.addLayout(app_layout)
-        layout.addLayout(start_time_layout)
-        layout.addLayout(stop_time_layout)
+        layout.addLayout(time_layout)
         layout.addWidget(self.execute_button)
+        layout.addWidget(self.output_text)
         self.setLayout(layout)
 
     def select_executable(self):
