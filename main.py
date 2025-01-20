@@ -54,7 +54,7 @@ class OpenModelicaApp(QWidget):
         # Execute Button
         self.execute_button = QPushButton("Run Simulation")
         self.execute_button.clicked.connect(self.run_simulation)
-        self.execute_button.setIcon(QIcon("assets\play_icon.png"))
+        self.execute_button.setIcon(QIcon(r"assets\play_icon.png"))
 
         # Output Area
         self.output_text = QTextEdit()
