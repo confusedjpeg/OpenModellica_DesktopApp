@@ -1,6 +1,6 @@
 # OpenModelica Simulation Desktop App
 
-![Animated Demo]("assets\openModellica.gif")
+![Animated Demo]("assets/openModellica.gif")
 
 ## Description
 
