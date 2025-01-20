@@ -1,6 +1,6 @@
 # OpenModelica Simulation Desktop App
 
-![Animated Demo]("[assets/openModellica.gif](https://github.com/confusedjpeg/OpenModellica_DesktopApp/blob/c896e86343d58d5dd7934b2a0c66fd4079a104cc/assets/openModellica.gif)")
+![Animated Demo](assets/openModellica.gif)
 
 ## Description
 
