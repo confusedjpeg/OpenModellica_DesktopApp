@@ -1,6 +1,6 @@
 # OpenModelica Simulation Desktop App
 
-![Animated Demo]("C:\Users\Saanvi Sharma\Videos\Screen Recordings\openModellica.gif")
+![Animated Demo]("assets\openModellica.gif")
 
 ## Description
 
