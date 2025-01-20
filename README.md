@@ -1,5 +1,7 @@
 # OpenModelica Simulation Desktop App
 
+![Animated Demo]("C:\Users\Saanvi Sharma\Videos\Screen Recordings\openModellica.gif")
+
 ## Description
 
 This application provides a simple graphical user interface (GUI) for running simulations of OpenModelica models. It addresses the requirements of the FOSSEE screening task by allowing users to select a compiled OpenModelica model executable, specify start and stop times for the simulation, and view the output directly within the application.
