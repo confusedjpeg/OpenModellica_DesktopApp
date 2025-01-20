@@ -1,0 +1,29 @@
+{"format":"Transformational debugger info","version":1,
+"info":{"name":"NonInteractingTanks.TwoConnectedTanks","description":""},
+"variables":{
+"tank1_h":{"comment":"","kind":"state","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":13,"lineEnd":13,"colStart":3,"colEnd":28}}},
+"tank2_h":{"comment":"","kind":"state","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":17,"lineEnd":17,"colStart":3,"colEnd":28}}},
+"der(tank1_h)":{"comment":"","kind":"derivative","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":13,"lineEnd":13,"colStart":3,"colEnd":28}}},
+"der(tank2_h)":{"comment":"","kind":"derivative","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":17,"lineEnd":17,"colStart":3,"colEnd":28}}},
+"tank2_Q1":{"comment":"","kind":"variable","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":18,"lineEnd":18,"colStart":3,"colEnd":29}}},
+"tank2_T":{"comment":"","kind":"variable","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":19,"lineEnd":19,"colStart":3,"colEnd":15}}},
+"tank1_A":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":6,"lineEnd":6,"colStart":3,"colEnd":31}}},
+"tank1_Qin":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":5,"lineEnd":5,"colStart":3,"colEnd":33}}},
+"tank2_A":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":9,"lineEnd":9,"colStart":3,"colEnd":31}}},
+"tank2_V":{"comment":"","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":10,"lineEnd":10,"colStart":3,"colEnd":32}}}
+},
+"equations":[{"eqIndex":0,"tag":"dummy"},
+{"eqIndex":1,"section":"initial","tag":"assign","defines":["tank2_h"],"uses":["$START.tank2_h"],"equation":["$START.tank2_h"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":2,"section":"initial","tag":"assign","defines":["tank1_h"],"uses":["$START.tank1_h"],"equation":["$START.tank1_h"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":3,"tag":"alias","equation":[7],"section":"initial"},
+{"eqIndex":4,"tag":"alias","equation":[8],"section":"initial"},
+{"eqIndex":5,"tag":"alias","equation":[9],"section":"initial"},
+{"eqIndex":6,"tag":"alias","equation":[10],"section":"initial"},
+{"eqIndex":7,"section":"regular","tag":"assign","defines":["tank2_Q1"],"uses":["tank1_h","time"],"equation":["if time <= 5.0 then 0.0 else sqrt(tank1_h)"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":8,"section":"regular","tag":"assign","defines":["der(tank1_h)"],"uses":["tank1_A","tank2_Q1","tank1_Qin"],"equation":["(tank1_Qin - tank2_Q1) / tank1_A"],"source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":23,"lineEnd":23,"colStart":3,"colEnd":50}}},
+{"eqIndex":9,"section":"regular","tag":"assign","defines":["der(tank2_h)"],"uses":["tank2_A","tank2_Q1"],"equation":["tank2_Q1 / tank2_A"],"source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":32,"lineEnd":32,"colStart":3,"colEnd":36}}},
+{"eqIndex":10,"section":"regular","tag":"assign","defines":["tank2_T"],"uses":["tank2_Q1","tank2_V"],"equation":["tank2_V / (1e-6 + tank2_Q1)"],"source":{"info":{"file":"D:/FOSSEE_Screening_Task/NonInteractingTanks/TwoConnectedTanks.mo","lineStart":33,"lineEnd":33,"colStart":3,"colEnd":40}}}
+],
+"functions":[
+]
+}
